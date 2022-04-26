@@ -20,6 +20,9 @@ def p1():
         numero += 1
         print('P1:', numero)
         mutex.release()
+        mutex.release()
+        time.sleep(1)
+
 
 
 def p2():
@@ -29,6 +32,8 @@ def p2():
         numero += 1
         print('P2:', numero)
         mutex.release()
+        mutex.release()
+        time.sleep(1)
 
 
 #time.sleep(1)  # usado apenas para forcar trocar contexto entre threads e visualizar condicao de disputa
@@ -36,5 +41,5 @@ t_p1 = threading.Thread(target=p1)
 t_p2 = threading.Thread(target=p2)
 t_p1.start()
 t_p2.start()
-t_p1.join()
-t_p2.join()
+
+
