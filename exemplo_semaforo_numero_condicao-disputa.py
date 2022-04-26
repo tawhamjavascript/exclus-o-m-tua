@@ -15,20 +15,20 @@ numero = 0
 
 def p1():
     global numero
-    while True:
-        mutex.release()
+    while numero < 30:
+        mutex.acquire()
         numero += 1
         print('P1:', numero)
-        mutex.acquire()
+        mutex.release()
 
 
 def p2():
     global numero
-    while True:
-        mutex.release()
+    while numero < 30:
+        mutex.acquire()
         numero += 1
         print('P2:', numero)
-        mutex.acquire()
+        mutex.release()
 
 
 #time.sleep(1)  # usado apenas para forcar trocar contexto entre threads e visualizar condicao de disputa
